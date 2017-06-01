@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-touch-fullscreen"content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="css/webapp.css">
+    <title>app</title>
+    <script>
+      var vers = (function() {
+          var u = navigator.userAgent,
+            app = navigator.appVersion;
+          return {
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            // android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+            weixin: 1||u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+         }
+      })()
+      function show(dom){
+        document.querySelector(dom).style.display = "block"
+      }
+      if (vers.weixin) {
+        window.onload=function(){
+          if (vers.ios) {
+            show("#apple-bg")
+          }else{
+            show("#adr-bg")
+          }
+        }
+      }else{
+        // console.log("jump")
+        // var site = location.search
+        // site=site.replace("?","http://")
+        // console.log(site);
+        // location.href=site
+        location.href=location.search.replace("?","http://")
+        // show(".warpper")
+      }
+    </script>
+    <style>
+    @font-face {
+      font-family: iconfont;
+      src: url("//at.alicdn.com/t/font_p8f3pggq80aa714i.eot");
+      src: url("//at.alicdn.com/t/font_p8f3pggq80aa714i.eot?#iefix") format("embedded-opentype"),url("//at.alicdn.com/t/font_p8f3pggq80aa714i.woff") format("woff"),url("//at.alicdn.com/t/font_p8f3pggq80aa714i.ttf") format("truetype"),url("//at.alicdn.com/t/font_p8f3pggq80aa714i.svg#iconfont") format("svg")
+    }
+    </style>
+  </head>
+  <body>
+      <div class="warpper">
+        <div class="title-icon"></div>
+        <h2>彩神爭霸</h2>
+        <p>下载APP 再也无需输入网址</p>
+        <a href="###" class="ios-phone"><i class="iconfont"></i>点击下载iOS版</a>
+        <a href="###" class="ios-phone"><i class="iconfont"></i>点击下载安卓版</a>
+      </div>
+      <!-- <div id="adr-bg"><img src="img/android.png" style="width:100%"></div>
+      <div id="apple-bg"><img src="img/apple_safaripsd.png" style="width:100%"></div> -->
+  </body>
+  <script>
+    var rem = document.body.clientWidth/16;
+    var em = Math.sqrt((rem-20)*.9)+20;
+    document.querySelector("html").style.fontSize=rem+'px';
+    document.body.style.fontSize=em+'px';
+  </script>
+</html>

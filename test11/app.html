@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-touch-fullscreen"content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="css/webapp.css">
+    <title>app</title>
+    <script>
+      var vers = (function() {
+          var u = navigator.userAgent,
+            app = navigator.appVersion;
+          return {
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            // android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+            weixin: 1||u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+         }
+      })()
+      if (vers.weixin) {
+        window.onload=function(){
+          var src = "http://imagess-google.com/system/app/wechatdownload/apple.png"
+          document.getElementsByTagName("img")[0].src=vers.ios?src:src.replace("apple","android")
+        }
+      }else{
+        location.href=location.search.replace("?","http://")
+      }
+    </script>
+    <style>
+      html,body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+      }
+      body > div {
+        height: 100%;
+        background-color: #000;
+        opacity: 0.8px;
+      }
+      img{width: 100%}
+    </style>
+  </head>
+  <body>
+      <div><img></div>
+  </body>
+  <script>
+    var rem = document.body.clientWidth/16;
+    var em = Math.sqrt((rem-20)*.9)+20;
+    document.querySelector("html").style.fontSize=rem+'px';
+    document.body.style.fontSize=em+'px';
+  </script>
+</html>

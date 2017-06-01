@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-touch-fullscreen"content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="css/webapp.css">
+    <title>app</title>
+  </head>
+  <style>
+      @font-face {
+        font-family: 'iconfont';
+        src: url('font/iconfont.eot');
+        src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('font/iconfont.woff') format('woff'),
+        url('font/iconfont.ttf') format('truetype'),
+        url('font/iconfont.svg#iconfont') format('svg');
+      }
+      .iconfont{
+      font-family:"iconfont" !important;
+      font-size:16px;font-style:normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+      }
+  </style>
+  <body>
+      <div class="warpper">
+        <div class="title-icon"></div>
+        <h2>彩神爭霸</h2>
+        <p>下载APP 再也无需输入网址</p>
+        <a href="###" class="ios-phone"><i class="iconfont">&#xe608;</i>点击下载iOS版</a>
+        <a href="###" class="ios-phone"><i class="iconfont">&#xe603;</i>点击下载安卓版</a>
+      </div>
+  </body>
+  <script>
+    var rem = document.body.clientWidth/16;
+    var em = Math.sqrt((rem-20)*.9)+20;
+    document.querySelector("html").style.fontSize=rem+'px';
+    document.body.style.fontSize=em+'px';
+  </script>
+</html>
